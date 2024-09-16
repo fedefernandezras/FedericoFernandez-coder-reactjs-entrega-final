@@ -1,0 +1,20 @@
+.ConCon {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-around;
+  background-color: #dc9a0d;
+  width: 350px;
+  margin-left: 150px;
+}
+
+.ConCon strong {
+  margin: 15px;
+}
+
+button {
+  background-color: #dc9a0d;
+  font-size: 1.2rem;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px 20px;
+}
