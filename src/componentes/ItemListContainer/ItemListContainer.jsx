@@ -1,68 +1,42 @@
-import { useState, useEffect } from "react"
-import { getProductos, getProductosPorCategorias } from "../../asyncmock"
-import ItemList from "../ItemList/ItemList"
-import { useParams } from "react-router-dom"
-import loadingGif from '/img/carga.gif'
+import { useState, useEffect } from "react";
+import ItemList from "../ItemList/ItemList";
+import { useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { db } from "../../services/config";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
-    const [productos, setProductos] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [showLoading, setShowLoading] = useState(true)
+  const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-    const { idCategoria } = useParams()
+  const { idCategoria } = useParams();
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowLoading(false)
-        }, 5000)
+  useEffect(() => {
+    setLoading(true);
+    const misProductos = idCategoria
+      ? query(collection(db, "productos"), where("idCat", "==", idCategoria))
+      : collection(db, "productos");
 
-        const funcionProductos = idCategoria ? getProductosPorCategorias : getProductos
+    getDocs(misProductos)
+      .then((res) => {
+        const nuevosProductos = res.docs.map((doc) => {
+          const data = doc.data();
+          return { id: doc.id, ...data };
+        });
+        setProductos(nuevosProductos);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [idCategoria]);
 
-        funcionProductos(idCategoria)
-            .then(res => {
-                setProductos(res)
-                setLoading(false)
-            })
-            .catch(() => {
-                setLoading(false)
-            })
-            .finally(() => {
-                clearTimeout(timer)
-                setShowLoading(false)
-            })
+  return (
+    <>
+      <h2 style={{ textAlign: "center" }}>Mis Productos</h2>
+      {loading ? <Loader /> : <ItemList productos={productos} />}
+    </>
+  );
+};
 
-        return () => clearTimeout(timer)
-    }, [idCategoria])
-
-    return (
-        <div style={{ textAlign: "center" }}>
-            {showLoading && (
-                <div style={styles.loaderContainer}>
-                    <img 
-                        src={loadingGif} 
-                        alt="Loading..." 
-                        style={styles.loaderImage} 
-                    />
-                </div>
-            )}
-            {!showLoading && !loading && (
-                < >
-                    <h2 style={{ marginTop: "10px" }}>Los mejores artículos para tus mascotas!</h2>
-                    <ItemList  productos={productos}/>
-                </>
-            )}
-        </div>
-    )
-}
-
-const styles = {
-    loaderContainer: {
-        display: 'flex',
-        justifyContent: 'center', 
-        alignItems: 'center',    
-        height: '100vh',          
-        margin: '20px'            
-    }   
-}
-
-export default ItemListContainer
+export default ItemListContainer;

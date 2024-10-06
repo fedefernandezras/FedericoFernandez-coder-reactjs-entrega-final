@@ -1,0 +1,57 @@
+.alfa {
+  justify-items: center;
+  text-align: center;
+  margin: 25px;
+}
+
+.input-container {
+  margin: 20px;
+}
+
+.input-container input {
+  padding: 10px;
+  border: 1px solid #c99842;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+
+h2 {
+  margin: 20px 0px 30px 0px;
+}
+
+.alfa button {
+  background-color: #b17c0a;
+  transition: background-color 0.3s ease;
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.alfa button:hover {
+  background-color: #a65d00;
+}
+
+.saimg {
+  width: 200px;
+  height: 200px;
+}
+
+.saboton {
+  width: 180px;
+  height: 55px;
+}
+
+.finalFinal strong {
+  background-color: #f2e9dd;
+  border: 1px solid black;
+  margin: 30px;
+  padding: 15px;
+}
+
+.finalFinal {
+  margin-bottom: 400px;
+}

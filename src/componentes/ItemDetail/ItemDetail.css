@@ -1,7 +1,7 @@
 .contenedorItem {
   display: flex;
-  flex-direction: row; 
-  align-items: center; 
+  flex-direction: row;
+  align-items: center;
   text-align: center;
   border: 1px solid black;
   margin: 40px 10px 40px 10px;
@@ -10,48 +10,44 @@
   border-radius: 10px;
 }
 
-
 .contenedorItem img {
-  width: 35vw; 
-  height: auto; 
-  max-height: 500px; 
-  object-fit: cover; 
+  width: 400px;
+  height: auto;
+  object-fit: cover;
   border-radius: 10px;
   display: block;
   margin: auto;
-
 }
-
 
 .contenedorItem .text-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 20px;
-  margin-left: 20px; 
-  flex: 1; 
-  min-height: 500px; 
+  margin-left: 20px;
+  min-width: 700px;
+  min-height: 500px;
 }
 
-
 .contenedorItem p {
-  margin: 15px 0; 
+  margin: 15px 0;
   padding: 20px;
   text-align: left;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
+  width: 600px;
+  min-height: 200px;
 }
-
 
 .contenedorItem h2,
 .contenedorItem h3 {
-  margin: 15px 0; 
+  margin: 15px 0;
   padding: 20px;
   font-size: x-large;
 }
-
 
 .contenedorItem button {
   background-color: #b17c0a;
@@ -60,11 +56,10 @@
   border-radius: 10px;
   border: none;
   padding: 10px 20px;
-  cursor: pointer;  
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-
 .contenedorItem button:hover {
-background-color: #a65d00; 
+  background-color: #a65d00;
 }

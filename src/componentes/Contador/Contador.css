@@ -1,20 +1,14 @@
 .ConCon {
   display: flex;
+  margin-top: auto;
   align-items: center;
   border-radius: 10px;
-  justify-content: space-around;
+  justify-content: flex-end;
   background-color: #dc9a0d;
   width: 350px;
-  margin-left: 150px;
+  width: 330px;
 }
 
 .ConCon strong {
-  margin: 15px;
-}
-
-button {
-  background-color: #dc9a0d;
-  font-size: 1.2rem;
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px 20px;
+  width: 40px;
 }
