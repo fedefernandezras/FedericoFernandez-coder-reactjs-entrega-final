@@ -25,8 +25,7 @@ const ItemListContainer = () => {
         });
         setProductos(nuevosProductos);
       })
-      .catch((error) => console.log(error))
-      .finally(() => {
+        .finally(() => {
         setLoading(false);
       });
   }, [idCategoria]);

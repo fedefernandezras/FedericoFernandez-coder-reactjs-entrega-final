@@ -17,8 +17,7 @@ const ItemDetailContainer = () => {
         const data = res.data();
         const nuevosProducto = { id: res.id, ...data };
         setProducto(nuevosProducto);
-      })
-      .catch((error) => console.log(error));
+      })   
   }, [idItem]);
 
   return (
