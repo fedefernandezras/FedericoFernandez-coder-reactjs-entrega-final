@@ -9,7 +9,7 @@ const NavBar = () => {
       <Link to="/">
         <img
           className="logoMascota"
-          src={"./img/mascotaplogo.png"}
+          src="/img/mascotaplogo.png"
           alt="Logo"
         />
       </Link>

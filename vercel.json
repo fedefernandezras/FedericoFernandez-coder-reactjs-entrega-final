@@ -1,5 +1,5 @@
 {
     "rewrites": [
-      { "source": "/(?!images|favicon.ico|api)(.*)", "destination": "/" }
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
