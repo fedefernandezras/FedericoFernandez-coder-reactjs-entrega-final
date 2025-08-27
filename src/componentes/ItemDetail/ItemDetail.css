@@ -65,7 +65,7 @@
 }
 
 /* Media query para pantallas chicas */
-@media (max-width: 768px) {
+@media (max-width: 668px) {
   .contenedorItem {
     flex-direction: column; /* imagen arriba, texto abajo */
     text-align: center;
