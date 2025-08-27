@@ -20,23 +20,33 @@ const Cart = () => {
   }
 
   return (
+  <div className="fullCarWrapper">
+    {/* Título fuera del grid */}
+    <h3 className="tituloCarrito">Tu carrito de compras!</h3>
+
+    {/* Contenedor de items */}
     <div className="fullCar">
-      <h3>Tu carrito de compras!</h3>
       {carrito.map((producto) => (
         <CartItem key={producto.item.id} {...producto} />
       ))}
-      <div className="montos">
-        <h3>Total: ${total}</h3>
-        <h3>Cantidad Total: {cantidadTotal}</h3>
-      </div>
-      <div className="comandos">
-        <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
-        <Link to="/checkout">
-          <button>Realizar pedido</button>
-        </Link>
-      </div>
     </div>
-  );
+
+    {/* Totales */}
+    <div className="montos">
+      <h3>Total: ${total}</h3>
+      <h3>Cantidad Total: {cantidadTotal}</h3>
+    </div>
+
+    {/* Botones */}
+    <div className="comandos">
+      <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
+      <Link to="/checkout">
+        <button>Realizar pedido</button>
+      </Link>
+    </div>
+  </div>
+);
 };
 
 export default Cart;
+
