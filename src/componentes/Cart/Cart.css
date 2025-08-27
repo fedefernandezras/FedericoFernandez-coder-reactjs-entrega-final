@@ -1,11 +1,15 @@
+/* Contenedor vacío del carrito */
 .emptCar {
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   margin: 25px;
 }
 
 .sigma {
-  width: 400px;
+  width: 250px;
   background-color: #b17c0a;
   color: #ffffff;
   font-size: 1.2rem;
@@ -16,39 +20,91 @@
   transition: background-color 0.3s ease;
   text-align: center;
   display: inline-block;
-  margin: 50px 50px 500px 50px;
+  margin: 50px 0 50px 0;
 }
 
 .sigma:hover {
   background-color: #a65d00;
 }
 
-.fullCar {
-  justify-items: center;
-  text-align: center;
-  margin: 25px;
+/* Contenedor principal del carrito */
+
+
+
+/* Cada item del carrito (CartItem) */
+.fullCar > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribuye contenido verticalmente */
+  padding: 20px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  min-height: 180px; /* altura mínima uniforme */
+  background-color: #f9f9f9;
+  width: 100%; /* ocupa todo el ancho de la columna del grid */
 }
 
+/* Montos y totales */
 .montos {
-  margin: 50px;
- 
+  grid-column: 1 / -1; /* ocupa toda la fila */
+  margin: 30px 0;
 }
 
-.comandos button{
-background-color:#b17c0a;
-transition: background-color 0.3s ease;
-margin: 20px;
-padding: 10px;
-border: none;
-border-radius: 10px;
-color: #ffffff;
-font-size: 20px;
+/* Botones de comandos */
+.comandos {
+  grid-column: 1 / -1; /* ocupa toda la fila */
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.comandos button {
+  background-color: #b17c0a;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .comandos button:hover {
   background-color: #a65d00;
 }
 
+/* Títulos y textos */
 h3 {
   margin-bottom: 15px;
+  word-break: break-word; /* evita que nombres largos rompan la caja */
+}
+.fullCarWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px;
+}
+
+/* Título centrado */
+.tituloCarrito {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/*jjjjjjjjjjjjjjjjjs items */
+.fullCar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  width: 100%;
+  justify-items: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fullCar {
+    grid-template-columns: 1fr; /* una columna en móvil */
+  }
 }
