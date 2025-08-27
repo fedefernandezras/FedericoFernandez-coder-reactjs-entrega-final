@@ -1,0 +1,35 @@
+.footer {
+  background-color: rgb(68, 94, 42);
+  color: rgb(215, 119, 50);
+  text-align: center;
+  padding: 20px 0;
+  border-top: 5px solid rgb(215, 119, 50);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-content p {
+  margin: 20px 20px 40px 20px;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

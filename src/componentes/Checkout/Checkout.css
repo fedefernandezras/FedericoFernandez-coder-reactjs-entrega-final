@@ -1,0 +1,76 @@
+.alfa {
+  justify-items: center;
+  text-align: center;
+  margin: 25px;
+}
+
+.input-container {
+  margin: 20px;
+}
+
+.input-container input {
+  padding: 10px;
+  border: 1px solid #c99842;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+}
+
+h2 {
+  margin: 20px 0px 30px 0px;
+}
+
+.alfa button {
+  background-color: #b17c0a;
+  transition: background-color 0.3s ease;
+  margin: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.alfa button:hover {
+  background-color: #a65d00;
+}
+
+.saimg {
+  width: 200px;
+  height: 200px;
+}
+
+.saboton {
+  width: 180px;
+  height: 55px;
+}
+
+.finalFinal {
+  margin: 0 auto 50px auto; /* centrado y margen inferior moderado */
+  max-width: 600px; /* ancho máximo para que no se haga gigante en desktop */
+  padding: 20px; /* padding interno uniforme */
+  text-align: center;
+}
+
+.finalFinal strong {
+  display: inline-block; /* permite padding y border correctamente */
+  background-color: #f2e9dd;
+  border: 1px solid black;
+  padding: 10px 15px; /* padding más pequeño para móvil */
+  margin: 10px 0; /* separación arriba y abajo */
+  word-break: break-all; /* rompe palabras muy largas para que no se desborde */
+  font-size: 1rem;
+}
+
+/* Responsive: pantallas chicas */
+@media (max-width: 480px) {
+  .finalFinal {
+    padding: 15px;
+    max-width: 90%; /* ocupa casi todo el ancho en móvil */
+  }
+
+  .finalFinal strong {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
